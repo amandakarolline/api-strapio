@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "docentes",
+  "info": {
+    "singularName": "docente",
+    "pluralName": "docentes",
+    "displayName": "docentes",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "siape": {
+      "type": "uid",
+      "required": true
+    },
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "turmas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::turma.turma",
+      "inversedBy": "docentes"
+    }
+  }
+}

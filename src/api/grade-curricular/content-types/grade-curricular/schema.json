@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "grades_curriculares",
+  "info": {
+    "singularName": "grade-curricular",
+    "pluralName": "grades-curriculares",
+    "displayName": "grade_curricular"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "ano": {
+      "type": "integer",
+      "required": true
+    },
+    "curso": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::curso.curso",
+      "inversedBy": "grades_curriculares"
+    },
+    "grade_componentes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::grade-componente.grade-componente",
+      "mappedBy": "grade_curricular"
+    }
+  }
+}

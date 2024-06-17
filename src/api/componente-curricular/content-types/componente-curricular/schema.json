@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "componentes_curriculares",
+  "info": {
+    "singularName": "componente-curricular",
+    "pluralName": "componentes-curriculares",
+    "displayName": "componente_curricular"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "codigo": {
+      "type": "string",
+      "required": true
+    },
+    "turmas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::turma.turma",
+      "mappedBy": "componente_curricular"
+    },
+    "grade_componentes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::grade-componente.grade-componente",
+      "mappedBy": "componente_curricular"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cursos",
+  "info": {
+    "singularName": "curso",
+    "pluralName": "cursos",
+    "displayName": "cursos"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "grades_curriculares": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::grade-curricular.grade-curricular",
+      "mappedBy": "curso"
+    },
+    "discentes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::discente.discente",
+      "mappedBy": "curso"
+    }
+  }
+}

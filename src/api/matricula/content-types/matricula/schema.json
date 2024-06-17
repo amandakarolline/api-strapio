@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "matriculas",
+  "info": {
+    "singularName": "matricula",
+    "pluralName": "matriculas",
+    "displayName": "matriculas"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "data": {
+      "type": "datetime"
+    },
+    "discente": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::discente.discente",
+      "inversedBy": "matriculas"
+    },
+    "turma": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::turma.turma",
+      "inversedBy": "matriculas"
+    }
+  }
+}

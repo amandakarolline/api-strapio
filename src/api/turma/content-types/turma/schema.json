@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "turmas",
+  "info": {
+    "singularName": "turma",
+    "pluralName": "turmas",
+    "displayName": "turmas"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "ano": {
+      "type": "integer"
+    },
+    "capacidade": {
+      "type": "integer"
+    },
+    "vagas_preenchidas": {
+      "default": 0,
+      "type": "integer"
+    },
+    "horario": {
+      "type": "string"
+    },
+    "componente_curricular": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::componente-curricular.componente-curricular",
+      "inversedBy": "turmas"
+    },
+    "matriculas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::matricula.matricula",
+      "mappedBy": "turma"
+    },
+    "docentes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::docente.docente",
+      "mappedBy": "turmas"
+    }
+  }
+}

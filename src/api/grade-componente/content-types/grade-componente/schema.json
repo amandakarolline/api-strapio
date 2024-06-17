@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "grade_componentes",
+  "info": {
+    "singularName": "grade-componente",
+    "pluralName": "grade-componentes",
+    "displayName": "grade_componente",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "grade_curricular": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::grade-curricular.grade-curricular",
+      "inversedBy": "grade_componentes"
+    },
+    "componente_curricular": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::componente-curricular.componente-curricular",
+      "inversedBy": "grade_componentes"
+    },
+    "periodo": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}
