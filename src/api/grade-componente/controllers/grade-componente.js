@@ -15,7 +15,7 @@ module.exports = {
         const { attribute, value } = ctx.params;
         const model = strapi.getModel('api::grade-componente.grade-componente');
 
-        const entity = await strapi.db.query('api::grade-componente.grade-componente').findOne({ where: { [attribute]: value } });
+        const entity = await strapi.db.query('api::grade-componente.grade-componente').findMany({ where: { [attribute]: value } });
 
         if (!entity) {
             return ctx.notFound('Entity not found');
