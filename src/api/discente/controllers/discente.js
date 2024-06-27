@@ -12,25 +12,25 @@ module.exports = createCoreController('api::discente.discente');
 
 module.exports = {
     async findByAttribute(ctx) {
-      const { attribute, value } = ctx.params;
-      const model = strapi.getModel('api::discente.discente');
+        const { attribute, value } = ctx.params;
+        const model = strapi.getModel('api::discente.discente');
       
-      const entity = await strapi.db.query('api::discente.discente').findMany({ where: { [attribute]: value } });
+        const entity = await strapi.db.query('api::discente.discente').findMany({ where: { [attribute]: value } });
       
-      if (!entity) {
-        return ctx.notFound('Entity not found');
-      }
+        if (!entity) {
+            return ctx.notFound('Entity not found');
+        }
   
-      const sanitizedEntity = await contentAPI.output(entity, model);
-      return ctx.send(sanitizedEntity);
+        const sanitizedEntity = await contentAPI.output(entity, model);
+        return ctx.send(sanitizedEntity);
     },
   
     async findAll(ctx) {
-      const model = strapi.getModel('api::discente.discente');
-      const entities = await strapi.db.query('api::discente.discente').findMany();
+        const model = strapi.getModel('api::discente.discente');
+        const entities = await strapi.db.query('api::discente.discente').findMany();
   
-      const sanitizedEntities = await contentAPI.output(entities, model);
+        const sanitizedEntities = await contentAPI.output(entities, model);
   
-      return ctx.send(sanitizedEntities);
+        return ctx.send(sanitizedEntities);
     },
-  };
+};
