@@ -26,6 +26,13 @@ module.exports = {
                 "policies": [],
             }
         },
-        
+        {
+            "method": "GET",
+            "path": "/grade-componentes/:attribute1/:value1/:attribute2/:value2",
+            "handler": "grade-componente.findByTwoAttributes",
+            "config": {
+                "policies": [],
+            }
+        },
     ]
 }

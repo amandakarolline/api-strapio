@@ -33,4 +33,18 @@ module.exports = {
 
         return ctx.send(sanitizedEntities);
     },
+    
+    async findByTwoAttributes(ctx) {
+        const { attribute1, value1, attribute2, value2 } = ctx.params;
+        const model = strapi.getModel('api::grade-componente.grade-componente');
+
+        const entity = await strapi.db.query('api::grade-componente.grade-componente').findMany({ where: { [attribute1]: value1, [attribute2]: value2 } });
+
+        if (!entity) {
+            return ctx.notFound('Entity not found');
+        }
+
+        const sanitizedEntity = await contentAPI.output(entity, model);
+        return ctx.send(sanitizedEntity);
+    },
 };
