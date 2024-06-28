@@ -40,6 +40,9 @@
       "relation": "oneToMany",
       "target": "api::matricula.matricula",
       "mappedBy": "discente"
+    },
+    "status": {
+      "type": "string"
     }
   }
 }

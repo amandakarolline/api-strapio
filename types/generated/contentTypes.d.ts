@@ -901,6 +901,7 @@ export interface ApiDiscenteDiscente extends Schema.CollectionType {
       'oneToMany',
       'api::matricula.matricula'
     >;
+    status: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
