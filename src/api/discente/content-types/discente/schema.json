@@ -12,10 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "matricula": {
-      "type": "biginteger"
-    },
     "nome": {
+      "type": "string"
+    },
+    "matricula": {
+      "type": "string"
+    },
+    "status": {
       "type": "string"
     },
     "periodo_ingresso": {
@@ -40,9 +43,6 @@
       "relation": "oneToMany",
       "target": "api::matricula.matricula",
       "mappedBy": "discente"
-    },
-    "status": {
-      "type": "string"
     }
   }
 }

@@ -882,8 +882,9 @@ export interface ApiDiscenteDiscente extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    matricula: Attribute.BigInteger;
     nome: Attribute.String;
+    matricula: Attribute.String;
+    status: Attribute.String;
     periodo_ingresso: Attribute.Integer;
     indice_academico: Attribute.Float;
     grade_curricular: Attribute.Relation<
@@ -901,7 +902,6 @@ export interface ApiDiscenteDiscente extends Schema.CollectionType {
       'oneToMany',
       'api::matricula.matricula'
     >;
-    status: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
